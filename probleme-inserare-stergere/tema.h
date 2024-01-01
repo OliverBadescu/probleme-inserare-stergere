@@ -76,3 +76,33 @@ void sol3() {
 // f) todo: Stergeti toate elementele ce sunt super prime. ???
 
 
+ // 2) a) todo: Inserati dupa fiecare element negativ, cubul lui. ???
+
+ // b) Inserati dupa al k=lea element ce are cifrele in ordine consecutiva de la stanga la dreapta, rasturnatul lui ???
+
+// c) Inserati intre oricare doua elemente palindorme intre ele, valorea in urma alipirii celui de al doilea umar la primul ???
+
+// d) Inserati dupa al k-lea element cu 3 divizori, suma diviziroilor lui
+
+void sol4() {
+
+	int v[] = { 3, 4, 25, 23, 9, 14 };
+	int dim = 6;
+	int k = 3;
+	int poz = k;
+	int key = sumaDivizori(v[k]);
+
+	cout << "Vectorul inainte de inserare este V={ ";
+	afisare(v, dim);
+	cout << "}" << endl;
+
+	cout << "Vectorul dupa inserare este V={ ";
+	inserare(v, dim, poz, key);
+	afisare(v, dim);
+	cout << "}" << endl;
+	
+
+}
+
+// f) Inserati inainte de fieacre numar ce are toate cifrele patrate perfecte, produsul cifrelor lui.
+

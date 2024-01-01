@@ -227,3 +227,34 @@ void stergereInterval(int v[], int& dim, int a, int b) {
 	}
 
 }
+
+int sumaDivizori(int nr) {
+
+	int s = 0;
+
+	for (int i = 1; i <= nr; i++) {
+		if (nr % i==0) {
+			s = s + i;
+		}
+
+	}
+	return s;
+
+}
+
+int pozitie3Divizori(int v[], int dim) {
+
+	int ct = 0;
+	
+
+	for (int i = 0; i < dim; i++) {
+		if (nrDivizori(v[i]) == 3){
+			ct++;
+			if (ct == 3){
+				return i;
+			}
+		}
+	}
+	return -1;
+
+}
