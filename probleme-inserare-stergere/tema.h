@@ -1,4 +1,4 @@
-#include "probleme.h"
+﻿#include "probleme.h"
 
 
 // FISA
@@ -6,7 +6,7 @@
 
 //1) a)todo: Sa se stearga al 3-lea element prim din vector
 
-void sol1() {
+void sola() {
 
 	int v[] = { 3, 24, 17, 23, 13, 14 };
 	int dim = 6;
@@ -28,7 +28,7 @@ void sol1() {
 
 // b) todo: Sa se stearga toate elemetnele ce au cel putin 2 cifre
 
-void sol2() {
+void solb() {
 
 	int v[] = { 3, 24, 17, 23, 13, 14 };
 	int dim = 6;
@@ -52,7 +52,7 @@ void sol2() {
 
 // d) todo: Se citesc 2 numere naturale a si b. Daca a < b, sa se stearaga toate numerele din interavaulul [a, b]
 
-void sol3() {
+void sold() {
 
 	int v[] = { 3, 24, 17, 23, 13, 49, 14, 32 };
 	int dim = 8;
@@ -84,7 +84,7 @@ void sol3() {
 
 // d) Inserati dupa al k-lea element cu 3 divizori, suma diviziroilor lui
 
-void sol4() {
+void sold2() {
 
 	int v[] = { 3, 4, 25, 23, 9, 14 };
 	int dim = 6;
@@ -106,3 +106,431 @@ void sol4() {
 
 // f) Inserati inainte de fieacre numar ce are toate cifrele patrate perfecte, produsul cifrelor lui.
 
+
+// 50 Probleme vectori
+
+// 1) todo: Sa se sorteze prima jumatate a vectorului crescator iar a doua jumatate dewscrescator. Sa se caute in interiorul primei jumatati, pozitiile pe care apare minimul.
+// Sa se caute in interiorul celei de a doua jumatati, pozitiile pe care apare maximul ??
+
+void sol1() {
+
+	int v[] = { 42, 1, 31, 412, 21, 52, 82, 13, 821 };
+	int dim = 9;
+	int min = indiceMin(v, dim);
+	int max = indiceMax(v, dim);
+
+	cout << "Pozitia pe care se afla minimul este: ";
+
+	cautareaBinaraPrima(v, dim, min);
+
+	cout << ";" << endl;
+
+	cout << "Pozitia pe care se afla maximul este: ";
+
+	cautareaBinaraDoi(v, dim, max);
+
+	cout << ";" << endl;
+}
+
+
+// 2) todo: Sa se verifice daca cifra de control a primului element apare in interiorul celei de a doua doua jumatati a vectorului
+
+void sol2() {
+
+	int v[] = { 42, 1, 31, 412, 21, 52, 82, 61, 821 };
+	int dim = 9;
+
+	int cifC = cifraControl(42);
+
+	if (cautareaBinaraDoi(v, dim, cifC) == true) {
+		cout << "Cifra de control a primului element apare in a doua jumatate a vectorlui" << endl;
+	}
+	else {
+		cout << "Cifra de control nu apare in a doua jumatate a vectorlui" << endl;
+	}
+
+}
+
+
+// 3) todo: Sa se verifice daca fiecare element din a doua jumatate apare cel putin de doua ori in interiorul primei jumatati a vectorului ???
+
+void sol3() {
+
+	int v[] = { 42, 1, 31, 412, 21, 52, 82, 61, 821 };
+	int dim = 9;
+
+}
+
+
+// 4) todo: Sa se sorteze vectorul crescator intre [pmin, pmax] daca elementul minim este anterior celui maxim si [pmax, pmin] daca elemenetul maxim este anterior celui de minim.
+
+void sol4() {
+
+	int v[] = { 42, 1, 31, 412, 21, 52, 82, 61, 821 };
+	int dim = 9;
+
+	cout << " Vectorul inainte de sortare este V={ ";
+	afisare(v, dim);
+	cout << "}" << endl;
+
+	cout << " Vectorul dupa sortare este V={ ";
+	sortareIntervalMinMax(v, dim);
+	afisare(v, dim);
+	cout << "}" << endl;
+
+}
+
+
+// 5) todo: Sa se verifice daca elementul k apare in intervalul [pmin, pmax]. Sa se afiseze un mesaj corespunzator 
+
+void sol5() {
+
+	int v[] = { 42, 1, 31, 412, 21, 52, 82, 61, 821 };
+	int dim = 9;
+	int k = 21;
+
+	if (cautareaBinaraMinMax(v, dim, k) == true) {
+		cout << k << " apare in intervalul [pmin, pmax]" << endl;
+	}
+	else {
+		cout << k << " nu apare in intervalul [pmin, pmax]" << endl;
+	}
+
+}
+
+
+// 6) todo: Sa se verfice daca cel mai mic numar prim apartine intervaului [pmin, pmax]. Sa se afiseze un mesaj corespunzator 
+
+void sol6() {
+
+	int v[] = { 42, 1, 31, 412, 21, 52, 82, 61, 821 };
+	int dim = 9;
+	int prim = celMaiMicNrPrim(v, dim);
+
+	if (cautareaBinaraMinMax(v, dim, prim) == true) {
+		cout << prim << " apare in intervalul [pmin, pmax]" << endl;
+	}
+	else {
+		cout << prim << " nu apare in intervalul [pmin, pmax]" << endl;
+	}
+
+}
+
+
+// 7) todo: Sa se verifice daca elementul k apare in afara intervalului [pmin,pmax]
+
+
+void sol7() {
+
+	int v[] = { 42, 1, 31, 412, 21, 52, 82, 61, 821, 52, 72 };
+	int dim = 11;
+	int kk = 72;
+
+	if (cautareaBinaraMin(v, dim, kk) == true || cautareaBinaraMax(v, dim, kk) == true) {
+		cout << kk << " se afla in afara intervalului [pmin, pmax]" << endl;
+	}
+	else {
+		cout << kk << " nu se afla in afara intervalului [pmin, pmax]" << endl;
+	}
+
+}
+
+// 8) todo: Se dau două şiruri a şi b, cu n, respectiv m elemente, numere naturale, ordonate crescător. 
+// Să se construiască un al treilea şir, c, care să conţină, în ordine crescătoare, elementele din şirurile a şi b.
+
+void sol8() {
+
+	int a[] = { 312, 21, 42, 52, 12, 92 };
+	int n = 6;
+	int b[] = { 90, 31, 11, 992, 0 };
+	int m = 5;
+	int c[101];
+	int k = 0;
+
+	cout << "A={ ";
+	afisare(a, n);
+	cout << "}" << endl;
+
+	cout << "B={ ";
+	afisare(a, m);
+	cout << "}" << endl;
+
+	cout << "Interclasarea a celor doi vectori este C={ ";
+	interclasare(a, n, b, m, c, k);
+	afisare(c, k);
+	cout << "}" << endl;
+
+}
+
+
+// 9) todo: Se dau două şiruri a şi b, cu n, respectiv m elemente, numere naturale, ordonate strict crescător. Să se afişeze, în ordine strict crescătoare, valorile existente în cel puţin unul dintre cele două şiruri.
+//  În cazul în care o valoare apare în ambele şiruri, va fi afişată o singură dată.
+
+void sol9() {
+
+	int a[] = { 312, 21, 42, 52, 12, 92 };
+	int n = 6;
+	int b[] = { 90, 21, 12, 992, 0 };
+	int m = 5;
+	int c[101];
+	int k = 0;
+
+	cout << "A={ ";
+	afisare(a, n);
+	cout << "}" << endl;
+
+	cout << "B={ ";
+	afisare(b, m);
+	cout << "}" << endl;
+
+	cout << "Interclasarea a celor doi vectori este C={ ";
+	interclasareFaraDubluri(a, n, b, m, c, k);
+	afisare(c, k);
+	cout << "}" << endl;
+
+}
+
+
+// 10) todo: Se dau două şiruri a şi b, cu n, respectiv m elemente, numere naturale, ordonate strict crescător. Să se afişeze, în ordine strict crescătoare, valorile existente în ambele şiruri.
+
+void sol10() {
+
+	int a[] = { 312, 21, 42, 52, 12, 92 };
+	int n = 6;
+	int b[] = { 90, 21, 12, 992, 0 };
+	int m = 5;
+	int c[101];
+	int k = 0;
+
+	cout << "A={ ";
+	afisare(a, n);
+	cout << "}" << endl;
+
+	cout << "B={ ";
+	afisare(b, m);
+	cout << "}" << endl;
+
+	cout << "Interclasarea a celor doi vectori este C={ ";
+	interclasareValoriExistente(a, n, b, m, c, k);
+	afisare(c, k);
+	cout << "}" << endl;
+
+}
+
+
+// 11) todo: Se dau două şiruri, cu n, respectiv m, elemente, numere naturale. Primul şir este ordonat crescător, iar al doilea este ordonat descrescător. 
+// Sa se afişeze, în ordine crescătoare, valorile pare din cele două şiruri.
+
+void sol11() {
+
+	int a[] = { 312, 3, 42, 51, 12, 92 };
+	int n = 6;
+	int b[] = { 90, 21, 12, 992, 0 };
+	int m = 5;
+	int c[101];
+	int k = 0;
+
+	cout << "A={ ";
+	bubbleSort(a, n);
+	afisare(a, n);
+	cout << "}" << endl;
+
+	cout << "B={ ";
+	bubbleSortDescresc(b, m);
+	afisare(b, m);
+	cout << "}" << endl;
+
+	cout << "Interclasarea a valorilor pare din cei doi vectori este C={ ";
+	interclasareValoriPare(a, n, b, m, c, k);
+	afisare(c, k);
+	cout << "}" << endl;
+
+}
+
+
+// 12) todo: Se dau două mulțimi de numere naturale. Să se afișeze reuniunea și intersecția lor.
+
+void sol12() {
+
+	int a[] = { 312, 21, 42, 52, 12, 92 };
+	int n = 6;
+	int b[] = { 90, 21, 12, 992, 0 };
+	int m = 5;
+	int c[101];
+	int k = 0;
+
+	cout << "A={ ";
+	afisare(a, n);
+	cout << "}" << endl;
+
+	cout << "B={ ";
+	afisare(b, m);
+	cout << "}" << endl;
+
+	cout << "Reuniunea a celor doi vectori este C={ ";
+	interclasareFaraDubluri(a, n, b, m, c, k);
+	afisare(c, k);
+	cout << "}" << endl;
+
+	cout << "Intersectia a celor doi vectori este C={ ";
+	interclasareValoriExistente(a, n, b, m, c, k);
+	afisare(c, k);
+	cout << "}" << endl;
+
+
+}
+
+
+// 13) todo: Se dau două șiruri de numere întregi, ordonate crescător. Șirul x[] contine n numere întregi ordonate crescător, șirul y[] conține m numere întregi ordonate crescător. 
+// Să se calculeze numărul de perechi de forma (x[i], y[j]) unde x[i] = y[j] și x[i] ∊ X, respectiv y[j] ∊ Y.
+// exemplu: În fișierul de intrare sunt 6 perechi de numere care îndeplinesc condițiile din enunț: (1,1), (2,2), (2,2), (3,3), (3,3), (4,4).
+
+void sol13() {
+
+	int a[] = { 1, 2, 2 ,3 ,3 ,4 };
+	int n = 6;
+	int b[] = { 1, 2, 3, 4, 5 };
+	int m = 5;
+	int c[101];
+	int k = 0;
+
+	cout << "A={ ";
+	afisare(a, n);
+	cout << "}" << endl;
+
+	cout << "B={ ";
+	afisare(b, m);
+	cout << "}" << endl;
+
+	cout << "Sunt " << contorInterclasare(a, n, b, m, c, k) << " perechi de numere intre vectori" << endl;
+
+}
+
+
+// 14) todo: Se dă un număr natural x și două șiruri a și b, cu n, respectiv m elemente, numere naturale, ordonate strict crescător.
+// Să se afișeze, în ordine crescătoare, multiplii lui x care se află doar în unul dintre cele două șiruri.
+
+void sol14() {
+
+	int a[] = { 1, 2, 3, 4, 7, 20, 60 };
+	int n = 7;
+	int b[] = { 3, 5, 7, 8, 9 , 10 ,12 , 20 ,24 };
+	int m = 9;
+	int c[101];
+	int k = 0;
+
+	int key = 0;
+	cin >> key;
+
+
+	cout << "A={ ";
+	afisare(a, n);
+	cout << "}" << endl;
+
+	cout << "B={ ";
+	afisare(b, m);
+	cout << "}" << endl;
+
+	cout << "Multipli lui " << key << " din cei doi vectori sunt "; \
+		interclasare(a, n, b, m, c, k);
+	multipliDinDoiVectori(a, n, b, m, c, k, key);
+
+
+
+}
+
+// 15) todo: Să se scrie un program care ordonează crescător elementele unui vector.
+
+void sol15() {
+
+	int v[] = { 42, 1, 31, 412, 21, 52, 82, 61, 821, 52, 72 };
+	int dim = 11;
+
+	cout << "Vectorul inainte de sortare este V={";
+	afisare(v, dim);
+
+	cout << "Vectorul dupa sortare este V={ ";
+	bubbleSort(v, dim);
+	afisare(v, dim);
+	cout << "}" << endl;
+
+}
+
+// 16) todo: Se dă un vector cu n elemente, numere naturale. Afișați în ordine crescătoare valorile prime din vector. ??
+
+void sol16() {
+
+	int v[] = { 42, 1, 31, 412, 21, 52, 82, 61, 821, 52, 72 };
+	int dim = 11;
+
+	cout << "Vectorul inainte de sortare este V={";
+	afisare(v, dim);
+	cout << "} " << endl;
+
+	cout << "Vectorul dupa sortare este V={ ";
+	vectorNrPrime(v, dim);
+	afisare(v, dim);
+	cout << "}" << endl;
+}
+
+
+// 17) todo: Se dă un vector cu n elemente, numere naturale. Afișați în ordine descrescătoare valorile divizibile cu 10 din acest vector. ???
+
+void sol17(){}
+
+
+// 18) todo: Să se scrie un program care ordonează descrescător elementele unui vector.
+
+void sol18() {
+
+	int v[] = { 42, 1, 31, 412, 21, 52, 82, 61, 821, 52, 72 };
+	int dim = 11;
+
+	cout << "Vectorul inainte de sortare este V={";
+	afisare(v, dim);
+	cout << "}" << endl;
+
+	cout << "Vectorul dupa sortare este V={ ";
+	bubbleSortDescresc(v, dim);
+	afisare(v, dim);
+	cout << "}" << endl;
+
+}
+
+
+// 19) todo: Să se ordoneze crescător elementele unui vector crescător după suma cifrelor.
+
+void sol19() {
+
+	int v[] = { 89, 22, 91, 4005, 51, 721 };
+	int dim = 6;
+
+	cout << "Vectorul inainte de sortare este V={";
+	afisare(v, dim);
+	cout << "}" << endl;
+
+	cout << "Vectorul dupa sortare este V={ ";
+	bubbleSortSumaCif(v, dim);
+	afisare(v, dim);
+	cout << "}" << endl;
+
+}
+
+
+// 20) todo: Să se ordoneze crescător elementele unui vector crescător după prima cifră.
+
+void sol20() {
+
+	int v[] = { 89, 22, 91, 4005, 51, 721 };
+	int dim = 6;
+
+	cout << "Vectorul inainte de sortare este V={";
+	afisare(v, dim);
+	cout << "}" << endl;
+
+	cout << "Vectorul dupa sortare este V={ ";
+	bubbleSortPrimaCif(v, dim);
+	afisare(v, dim);
+	cout << "}" << endl;
+
+}
