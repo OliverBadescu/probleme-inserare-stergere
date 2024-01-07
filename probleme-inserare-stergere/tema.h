@@ -534,3 +534,78 @@ void sol20() {
 	cout << "}" << endl;
 
 }
+
+
+// 21) todo: Să se determine câte elemente din şir sunt egale cu ultimul element al acestuia.
+
+void sol21() {
+
+	int v[] = { 89, 22, 91, 4005, 51, 22 };
+	int dim = 6;
+	int aparitie = aparitieUltimaCif(v, dim);
+
+	cout << "Sunt " << aparitie << " elemente in sir care sun egale cu ultimul element" << endl;
+
+
+}
+
+
+// 22) todo: Se dă un vector x cu n elemente, numere naturale. Să se construiască un alt vector, y, care să conțină elementele impare din x, în ordine inversă.
+
+void sol22() {
+
+	int v[] = { 89, 22, 91, 4005, 51, 22 };
+	int dim = 6;
+	int b = 4;
+	int a[100];
+
+	construireVectorImp(v, dim, a);
+
+	cout << "Vectorul A este={ ";
+	afisare(a, b);
+	cout << "}";
+
+
+}
+
+
+// 23) todo: Se dă un vector cu n numere naturale. Să se determine câte dintre elementele vectorului sunt prime cu ultimul element.
+
+void sol23() {
+
+	int v[] = { 50, 67, 13, 28, 35, 29 };
+	int dim = 6;
+
+	cout << "Elementele prime cu ultimul element din vector sunt ";
+	elementePrimeCuUltimul(v, dim);
+	
+
+}
+
+
+// 24) todo: Se citește un vector cu n elemente, numere naturale distincte. 
+// Să se afișeze elementele cuprinse între elementul cu valoarea minimă și cel cu valoare maximă din vector, inclusiv acestea.
+
+void sol24() {
+
+	int v[] = { 7, 9, 6, 2, 8 };
+	int dim = 5;
+
+	cout << "Elementele cuprinse intre elementul cu valorea minima si cel cu valorea maxima din vector sunt: ";
+	intervalMinMax(v, dim);
+
+}
+
+
+// 25) todo: Se citește un vector cu n elemente, numere naturale. Să se determine suma valorilor elementelor cuprinse între primul și ultimul element par al vectorului, inclusiv acestea.
+
+void sol25() {
+
+	int v[] = { 7, 6, 1, 2, 8 };
+	int dim = 5;
+	int s = sumaIntervalPare(v, dim);
+
+	cout << "Suma elementelor cuprinse intre primul si ultimul element par al vectorului este " << s;
+
+
+}

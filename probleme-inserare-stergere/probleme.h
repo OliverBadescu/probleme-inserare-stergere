@@ -970,3 +970,86 @@ void bubbleSortPrimaCif(int v[], int dim) {
 
 	} while (sortat == false);
 }
+
+int aparitieUltimaCif(int v[], int dim) {
+
+	int ct = 0;
+
+	for (int i = 0; i < dim; i++) {
+
+		if (v[i] == v[dim - 1]) {
+			ct++;
+		}
+
+	}
+	return ct;
+}
+
+void construireVectorImp(int v[], int dim, int a[]) {
+
+	int k = 0;
+
+	for (int i = dim - 1; i >= 0; i--) {
+		if (v[i] % 2 == 1) {
+			a[k] = v[i];
+			k++;
+		}
+	}
+
+}
+
+void elementePrimeCuUltimul(int v[], int dim) {
+
+	for (int i = 0; i < dim-1; i++) {
+		if (nrDivizori(v[i]) == nrDivizori(dim - 1)) {
+			cout << v[i] << " ";
+		}
+	}
+		
+}
+
+void intervalMinMax(int v[], int dim) {
+
+	int max = indiceMax(v, dim);
+	int min = indiceMin(v, dim);
+
+	for (int i = max; i < min; i++) {
+		cout << v[i] << " ";
+	}
+
+}
+
+int primulElementPar(int v[], int dim) {
+
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] % 2 == 0) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+int ultimulElementPar(int v[], int dim) {
+
+	int element = 0;
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] % 2 == 0) {
+			element = i;
+		}
+	}
+	return element;
+}
+
+int sumaIntervalPare(int v[], int dim) {
+
+	int primPar = primulElementPar(v, dim);
+	int ultimPar = ultimulElementPar(v, dim);
+	int s = 0;
+
+	for (int i = primPar; i <= ultimPar; i++) {
+		s = s + v[i];
+	}
+	return s;
+}
