@@ -609,3 +609,391 @@ void sol25() {
 
 
 }
+
+
+// 26) todo: Se dă un șir cu n elemente, numere naturale. Determinați diferența în valoare absolută dintre numărul de valori pare din șir și numărul de valori impare din șir.
+
+void sol26() {
+
+
+	int v[] = { 12,23,45,67,78 };
+
+	int dim = 5;
+
+	int dif = abs(valoriImpare(v, dim) - valoriPare(v, dim));
+
+	afisare(v, dim);
+
+	cout << "Solutia este " << dif;
+
+}
+
+
+// 27) todo: Se dă un vector x cu n elemente numere naturale, ordonate crescător, și un vector y cu m elemente, de asemenea numere naturale. 
+// Verificați pentru fiecare element al vectorului y dacă apare în x.  ???
+
+
+// 28) todo: Să se șteargă din șirul X elementul aflat pe poziția p.
+
+void sol28() {
+
+	int v[] = { 7, 3, 9, 1, 6 };
+	int dim = 5;
+	int poz = 1;
+
+	cout << "Vectorul inainte de stergere este V={";
+	afisare(v, dim);
+	cout << "}" << endl;
+
+	cout << "Vectorul dupa stergere este V={ ";
+	stergere(v, dim, poz);
+	afisare(v, dim);
+	cout << "}" << endl;
+
+}
+
+
+// 29) todo: Se citește un șir cu n elemente, numere întregi. Să se șteargă elementele care se repetă, păstrându-se doar primul de la stânga la dreapta.
+
+void sol29() {
+
+	int v[101] = { 1, 2, 3, 2, 4, 5 };
+	int dim = 6;
+	int poz = repetare(v, dim);
+
+	cout << "Vectorul inainte de stergere este V={";
+	afisare(v, dim);
+	cout << "}" << endl;
+
+	cout << "Vectorul dupa stergere este V={ ";
+	stergere(v, dim, poz);
+	afisare(v, dim);
+	cout << "}" << endl;
+
+}
+
+
+// 30) todo: Să se insereze pe o poziție dată într-un șir o valoare precizată.
+
+void sol30() {
+
+	int v[] = { 7, 3, 9, 1, 6 };
+	int dim = 5;
+	int key = 10;
+	int poz = 1;
+
+	cout << "Vectorul inainte de inserare este V={";
+	afisare(v, dim);
+	cout << "}" << endl;
+
+	cout << "Vectorul dupa inserare este V={ ";
+	inserare(v, dim, poz, key);
+	afisare(v, dim);
+	cout << "}" << endl;
+
+}
+
+
+// 31) todo: Se dau n numere întregi. Să se insereze între oricare două numere de aceeași paritate media lor aritmetică. ???
+
+
+// 32) todo: Se dă un şir cu n elemente, numere naturale. Să se verifice dacă în şir există elemente impare.
+
+void sol32() {
+
+	int v[] = { 412, 12, 322, 211, 452 };
+	int dim = 5;
+
+	if (isImpar(v, dim) == true) {
+		cout << "Vectorul contine elemente impare"<<endl;
+	}
+	else {
+		cout << "Vectorul nu contine elemente impare"<<endl;
+	}
+
+}
+
+
+// 33) todo: Se dă un şir cu n elemente, numere naturale. Să se verifice dacă în șir există elemente prime.
+
+void sol33() {
+
+	int v[] = { 412, 13, 322, 211, 452 };
+	int dim = 5;
+
+	if (isImpar(v, dim) == true) {
+		cout << "Vectorul contine elemente prime" << endl;
+	}
+	else {
+		cout << "Vectorul nu contine elemente prime" << endl;
+	}
+
+}
+
+
+// 34) todo: Se dă un şir cu n elemente, numere naturale. Să se verifice dacă toate elementele şirului sunt pare.
+
+void sol34() {
+
+	int v[] = { 412, 12, 322, 212, 4 };
+	int dim = 5;
+
+	if (contorToatePare(v,dim)==dim) {
+		cout << "Vectorul are toate elementele pare" << endl;
+	}
+	else {
+		cout << "Vectorul nu are toate elementele pare" << endl;
+	}
+
+}
+
+
+// 35) todo: Se dă un vector cu n elemente numere naturale. Să se verifice dacă toate elementele vectorului sunt egale.
+
+void sol35() {
+
+	int v[] = { 412, 412, 412, 412, 412 };
+	int dim = 5;
+
+	if (contorEgale(v, dim) == dim-1) {
+		cout << "Vectorul are toate elementele egale" << endl;
+	}
+	else {
+		cout << "Vectorul nu are toate elementele egale" << endl;
+	}
+
+}
+
+
+// 36) todo: Se dă un vector cu n elemente numere naturale. Să se verifice dacă oricare două elemente ale vectorului sunt diferite.
+
+void sol36() {
+
+	int v[] = { 412, 12, 322, 212, 4 };
+	int dim = 5;
+
+	if (isDiferite(v, dim) == true) {
+		cout << "Vectorul are doua elementele diferite" << endl;
+	}
+	else {
+		cout << "Vectorul nu are doua elementele diferite" << endl;
+	}
+
+}
+
+
+// 37) todo: Se dă un vector cu n elemente numere naturale. Să se verifice dacă are elementele ordonate crescător.
+
+void sol37() {
+
+	int v[] = { 8, 12, 55, 212, 421 };
+	int dim = 5;
+
+	if (isCrescator(v, dim) == true) {
+		cout << "Vectorul este ordonat crescator" << endl;
+	}
+	else {
+		cout << "Vectorul nu este ordonat crescator" << endl;
+	}
+
+}
+
+
+// 38) todo: Se dă un şir cu n elemente, numere naturale. Să se verifice dacă toate elementele şirului sunt multipli ai ultimului element din şir.
+
+void sol38() {
+
+	int v[] = { 84, 60, 102, 24, 6 };
+	int dim = 5;
+
+	if (isMultipluUltimElement(v, dim) == true) {
+		cout << "Toate elementele sirului sunt multipli ai ultimului element din sir" << endl;
+	}
+	else {
+		cout << "Nu toate elementele sirului sunt multipli ai ultimului element din sir" << endl;
+	}
+
+}
+
+
+// 39) todo: Se dau doi vectori cu câte n elemente, numere naturale. Verificați dacă cei doi vectori conțin exact aceleași elemente. ???
+
+
+// 40) todo: Se da un vector cu cate n elemente, numere naturale.Sa se verifice cate numere prime avem in vector
+
+void sol40() {
+
+	int v[] = { 12,34,17,31,90,21,32 };
+	int dim = 6;
+
+	afisare(v, dim);
+
+
+	int prime = contorPrime(v, dim);
+
+
+	cout << "In vector sunt " << prime << " nr prime" << endl;
+
+}
+
+
+// 41) todo: Se da un vector cu cate n elemente, numere naturale. Sa se verifice care este cea mai mica, respectiv cea mai mare cifra din vector
+
+void sol41() {
+
+	int v[] = { 24, 29, 12, 94, 43, 99 };
+	int dim = 6;
+
+	int min = cifMin(v, dim);
+	int max = cifMax(v, dim);
+
+	afisare(v, dim);
+
+	cout << "Cea mai mica cifra din vector este " << min << " iar cea mai mare cifra este " << max << endl;
+
+}
+
+
+// 42) todo: Se da un vector cu cate n elemente, numere naturale. Afisati rasturnatul numerelor cu proprietatea ca prima cifra = ultima cifra 
+
+void sol42() {
+
+	int v[100] = { 12, 2432, 2312, 74, 31 };
+	int dim = 5;
+
+	for (int i = 0; i < dim; i++) {
+
+		if (isEgale(v[i]) == true) {
+			v[i] = rasturnatNr(v[i]);
+		}
+
+	}
+
+
+	afisare(v, dim);
+
+
+}
+
+
+// 43) todo:  Se da un vector cu cate n elemente, numere naturale. Sa se verifice daca toate numerele din vector au proprietatea ca au exact k divizori
+
+void sol43() {
+
+	int v[] = { 7, 17, 19, 13, 59 };
+	int dim = 5;
+	int ct = 0;
+	int k;
+	cin >> k;
+
+	afisare(v, dim);
+
+	if (isElementeleKdivizori(v, dim, k) == true) {
+		cout << "Toate numerele din vector au " << k << " divizori";
+	}
+	else {
+		cout << "Nu toate numere din vector au " << k << " divizori";
+	}
+}
+
+
+// 44) todo: Se da un vector cu cate n elemente, numere naturale. Sa se calculeze produsul numerelor ce au aceeasi paritate cu pozitia pe care stau
+
+void sol44() {
+
+	int v[] = { 12, 31, 42, 11, 65, 22, 74 };
+	int dim = 7;
+
+	int produs = ProdusulParitate(v, dim);
+
+	afisare(v, dim);
+
+	cout << "Produsul numerelor care au aceeasi paritate cu pozitia pe care stau este " << produs;
+
+}
+
+
+// 45) todo: Se da un vector cu cate n elemente, numere naturale. Afisati produsul cifrelor la fieacre element al vectorului ce are cifra de control un numar par
+
+void sol6() {
+
+	int v[] = { 123, 44, 51, 32, 5214, 14 };
+	int dim = 6;
+
+	afisare(v, dim);
+
+	produsulCifcuCifaControlPara(v, dim);
+
+}
+
+
+// 46) todo: Se citește un vector cu n elemente, numere naturale. Să se determine suma valorilor elementelor cuprinse între primul și ultimul element par al vectorului, inclusiv acestea.
+
+void sol46() {
+
+	int v[] = { 11, 13, 24, 53, 12, 13, 14, 15 };
+	int dim = 8;
+
+	int suma = sumaElementeIntrePare(v, dim);
+
+	cout << "Suma valorilor elementelor cuprinse inter primul si ultimul element par al vectorului, inclusiv acestea este " << suma;
+
+}
+
+
+// 47) todo: Se dă un șir cu n elemente, numere reale. Să se determine câte dintre elemente se află în afara intervalului închis determinat de primul și ultimul element.
+// Elementele șirului {2 0.5 4 -1 -8 -3} aflate în afara intervalului [-3,2] sunt: 4 și -8.
+
+void sol47() {
+
+	int v[] = { 2, 0.5, 4, -1, -8, -3 };
+	int dim = 6;
+
+	int contor = contorIntervalInchis(v, dim);
+
+	cout << "Numarul de elemente care se afla in afara intervalului inchis determinat de primul si ultimul element sunt " << contor << endl;
+
+}
+
+
+// 48) todo: Se dă un vector cu n numere naturale. Să se determine câte dintre perechile de elemente egal depărtate de capetele vectorului sunt prime între ele.
+//exemplu: {50 18 15 28 35 40}, Perechile de elemente prime între ele sunt: (18, 35) și (15, 28).
+
+void sol9() {
+
+	int v[] = { 50, 18, 15, 28, 35, 40 };
+	int dim = 6;
+
+	int contor = elementePrimeEgalDepartate(v, dim);
+
+	cout << contor;
+
+}
+
+
+// 49) todo: Se dă un vector cu n numere naturale. Să se determine câte dintre perechile de elemente din vector sunt formate din valori cu aceeași sumă a cifrelor.
+
+void sol49() {
+
+	int v[] = { 51, 842, 15, 28, 77, 132 };
+	int dim = 6;
+
+	int ct = contorElementeCuAceeasiSumaCif(v, dim);
+
+	cout << "Sunt " << ct << " perechi de numere care au aceeasi suma a cifrelor" << endl;
+
+}
+
+
+// 50) todo: Se dă un vector cu n numere naturale. Să se determine câte dintre perechile de elemente din vector sunt prime între ele.
+
+void sol50() {
+
+	int v[] = { 51, 18, 15, 28, 77, 121 };
+	int dim = 6;
+
+	int ct = contorElementePrime(v, dim);
+
+	cout << "Sunt " << ct << " elemente care sunt prime intre ele " << endl;
+
+}

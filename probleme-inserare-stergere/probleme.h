@@ -539,6 +539,18 @@ bool isNrPrim(int nr) {
 
 }
 
+int contorPrime(int v[], int dim) {
+
+	int ct = 0;
+
+	for (int i = 0; i < dim; i++) {
+		if (isNrPrim(v[i]) == true) {
+			ct++;
+		}
+	}
+	return ct;
+}
+
 int celMaiMicNrPrim(int v[], int dim) {
 
 	int min = INT_MAX;
@@ -1053,3 +1065,375 @@ int sumaIntervalPare(int v[], int dim) {
 	}
 	return s;
 }
+
+int valoriPare(int v[], int n) {
+
+	int nrPare = 0;
+
+	for (int i = 0; i < n; i++) {
+		if (v[i] % 2 == 0) {
+			nrPare++;
+		}
+	}
+	return nrPare;
+}
+
+int valoriImpare(int v[], int n) {
+
+	int nrImpare = 0;
+
+	for (int i = 0; i < n; i++) {
+		if (v[i] % 2 == 1) {
+			nrImpare++;
+		}
+	}
+	return nrImpare;
+}
+
+int repetare(int v[], int dim) {
+
+	int nr = 0;
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] == nr) {
+			return i;
+		}
+		nr = v[i];
+	}
+	return -1;
+}
+
+bool isImpar(int v[], int dim) {
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] % 2 == 1) {
+			return true;
+		}
+	}
+	return false;
+}
+
+bool isPrim(int v[], int dim) {
+
+	for (int i = 0; i < dim; i++) {
+		if (nrDivizori(v[i])==2) {
+			return true;
+		}
+	}
+	return false;
+}
+
+int contorToatePare(int v[], int dim) {
+
+	int ct = 0;
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] % 2 == 0) {
+			ct++;
+		}
+	}
+	return ct;
+}
+
+int contorEgale(int v[], int dim) {
+
+	int ct = 0;
+
+	for (int i = 0; i < dim-1; i++) {
+		if (v[i] == v[i+1]) {
+			ct++;
+		}
+	}
+	return ct;
+}
+
+bool isDiferite(int v[], int dim) {
+
+
+	for (int i = 0; i < dim - 1; i++) {
+		if (v[i] != v[i + 1]) {
+			return true;
+		}
+	}
+	return false;
+}
+
+bool isCrescator(int v[], int dim) {
+
+	for (int i = 0; i < dim-1; i++) {
+		if (v[i] > v[i + 1]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool isMultipluUltimElement(int v[], int dim) {
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] % v[dim - 1] == 1) {
+			return false;
+		}
+	}
+	return true;
+}
+
+int cifMax(int v[], int dim) {
+
+	int max = INT_MIN;
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] > max) {
+			max = v[i];
+		}
+	}
+	return max;
+}
+
+int cifMin(int v[], int dim) {
+
+	int min = INT_MAX;
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] < min) {
+			min = v[i];
+		}
+	}
+	return min;
+}
+
+bool isEgale(int nr) {
+
+	int uc = nr % 10;
+	while (nr > 10) {
+		nr = nr / 10;
+	}
+	if (uc == nr) {
+		return true;
+	}
+	return false;
+}
+
+int rasturnatNr(int nr) {
+
+	int nou = 0;
+	int p = 1;
+
+	while (nr != 0) {
+		int uc = nr % 10;
+		nou = nou * 10 + uc;
+		nr = nr / 10;
+
+	}
+	return nou;
+}
+
+bool isExactKDivizori(int nr, int k) {
+
+
+	return nrDivizori(nr) == k;
+
+}
+
+bool isElementeleKdivizori(int v[], int dim, int k) {
+
+	int ct = 0;
+
+	for (int i = 0; i < dim; i++) {
+		if (isExactKDivizori(v[i], k) == true) {
+			ct++;
+		}
+	}
+	if (ct == dim) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+int ProdusulParitate(int v[], int dim) {
+
+	int p = 1;
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] % 2 == 0 && i % 2 == 0) {
+			p = p * v[i];
+		}
+		if (v[i] % 2 == 1 && i % 2 == 1) {
+			p = p * v[i];
+		}
+	}
+	return p;
+}
+
+int produsCif(int nr) {
+
+	int p = 1;
+
+	while (nr != 0) {
+		int uc = nr % 10;
+		p = p * uc;
+		nr = nr / 10;
+	}
+	return p;
+}
+
+int produsulCifcuCifaControlPara(int v[], int dim) {
+
+
+	for (int i = 0; i < dim; i++) {
+		if (cifraControl(v[i]) % 2 == 0) {
+			cout << "Produsul cifrelor lui " << v[i] << " este " << produsCif(v[i]) << endl;
+		}
+	}
+	return 0;
+}
+
+int pozitiaPrimuluiElemPar(int v[], int dim) {
+	for (int i = 0; i < dim; i++) {
+		if (v[i] % 2 == 0) {
+
+			return i;
+		}
+	}
+	return -1;
+}
+
+int pozitiaUltimuluiElemPar(int v[], int dim) {
+
+	for (int i = dim - 1; i >= 0; i--) {
+		if (v[i] % 2 == 0) {
+
+			return i;
+		}
+	}
+	return -1;
+}
+
+int sumaElementeIntrePare(int v[], int dim) {
+
+	int s = 0;
+	int par1 = pozitiaPrimuluiElemPar(v, dim);
+	int par2 = pozitiaUltimuluiElemPar(v, dim);
+
+
+	if (par1 == -1) {
+
+		return s;
+	}
+
+
+
+	for (int i = par1; i <= par2; i++) {
+
+		s += v[i];
+	}
+	return s;
+}
+
+int contorIntervalInchis(int v[], int dim) {
+
+	int ct = 0;
+
+	int primul = v[0]; int doi = v[dim - 1];
+
+	if (primul > doi) {
+		int aux = primul;
+		primul = doi;
+		doi = aux;
+	}
+
+	for (int i = 1; i < dim - 1; i++) {
+		if (v[i] >= primul && v[i] <= doi) {
+			ct++;
+		}
+	}
+
+	return ct;
+
+}
+
+int cmmdc(int a, int b) {
+
+
+
+	while (a != b) {
+
+
+		if (a > b) {
+
+			a = a - b;
+		}
+		if (b > a) {
+
+			b = b - a;
+		}
+	}
+
+	return a;
+}
+
+bool isPrimeIntreEle(int a, int b) {
+
+	return cmmdc(a, b) == 1;
+
+}
+
+int elementePrimeEgalDepartate(int v[], int dim)
+{
+
+	int ct = 0;
+	for (int i = 0, j = dim - 1; i < j; i++, j--) {
+
+		if (isPrimeIntreEle(v[i], v[j])) {
+			cout << "(" << v[i] << ", " << v[j] << ")" << endl;
+		}
+	}
+	return 0;
+}
+
+int sumaSir(int v[], int dim) {
+
+	int s = 0, i;
+
+	for (i = 0; i < dim; i++) {
+		s = s + v[i];
+	}
+
+	cout << s << endl;
+
+	for (i = dim - 1; i >= 1; i--) {
+		s = s - v[i];
+		cout << s << endl;
+	}
+	return 0;
+}
+
+int contorElementeCuAceeasiSumaCif(int v[], int dim) {
+
+	int ct = 0;
+
+	for (int i = 0, j = dim - 1; i < j; i++, j--) {
+		if (sumaCif(v[i]) == sumaCif(v[j])) {
+			ct++;
+		}
+	}
+	return ct;
+}
+
+int contorElementePrime(int v[], int dim) {
+
+	int ct = 0;
+
+	for (int i = 0; i < dim; i++) {
+		for (int j = i + 1; j < dim; j++) {
+			if (cmmdc(v[i], v[j])) {
+				ct++;
+			}
+		}
+	}
+	return ct++;
+}
+
+
